@@ -1,0 +1,3 @@
+module.exports = {
+  url : "connection url in format mongodb://<username>:<password>@hostname:port"
+};
