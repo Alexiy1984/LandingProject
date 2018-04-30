@@ -1,3 +1,7 @@
+# NPM packages folder.
 node_modules/
+
+# MongoDB config file.
 config/db.js
-db/
+
+
