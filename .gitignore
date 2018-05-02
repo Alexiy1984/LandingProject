@@ -4,4 +4,7 @@ node_modules/
 # MongoDB config file.
 config/db.js
 
+# NPM logs
+npm-debug.log
+
 
