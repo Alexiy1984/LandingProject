@@ -3,9 +3,10 @@ module.exports = function(app, res) {
     const path = require('path');
     res.render('default', {
       title : 'Landing test index',
-      headerclass   : 'header'  ,
-      contentclass  : 'content' ,
-      footerclass   : 'footer'
+      headerclass       : 'header'  ,
+      contentclass      : 'content' ,
+      contentinnerclass : 'content__inner',
+      footerclass       : 'footer'
     });
   });
 };

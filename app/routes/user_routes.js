@@ -37,16 +37,45 @@ module.exports = function(app, db) {
     } else res.send(CorrectInputCheck(req.body.login,req.body.password,req.body.email,req.body.groups));
   });
 
-  app.get('/users/:id', (req, res) => {
-    const id = req.params.id;
-    const details = { '_id': new ObjectID(id) };
-    db.collection('users').findOne(details, (err, item) => {
+  // app.get('/users/:id', (req, res) => {
+  //   const id = req.params.id;
+  //   const details = { '_id': new ObjectID(id) };
+  //   db.collection('users').findOne(details, (err, item) => {
+  //     if (err) {
+  //       res.send({'error':'An error has occurred'});
+  //     } else {
+  //       //res.send(item);
+  //       res.render('default', {
+  //         title : 'Landing test index',
+  //         headerclass       : 'header'  ,
+  //         contentclass      : 'content' ,
+  //         contentinnerclass : 'content__inner',
+  //         footerclass       : 'footer',
+  //         login             : item.login
+  //       });
+  //     } 
+  //   });
+  // });
+
+  app.get('/users/:login', (req, res) => {
+    const login = req.params.login;
+    const flogin = {"login": login};
+    db.collection('users').findOne(flogin, (err, item) => {
       if (err) {
         res.send({'error':'An error has occurred'});
       } else {
-        res.send(item);
+        res.render('default', {
+          title : 'Landing test index',
+          headerclass       : 'header'  ,
+          contentclass      : 'content' ,
+          contentinnerclass : 'content__inner',
+          footerclass       : 'footer',
+          login             : item.login,
+          email             : item.email,
+          id                : item._id
+        });
       } 
-    });
+    });  
   });
 
   app.delete('/users/:id', (req, res) => {
