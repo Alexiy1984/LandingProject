@@ -35,7 +35,7 @@ module.exports = function(app, db) {
         }
       });
     } else res.send(CorrectInputCheck(req.body.login,req.body.password,req.body.email,req.body.groups));
-  });
+  }); 
 
   // app.get('/users/:id', (req, res) => {
   //   const id = req.params.id;
@@ -72,7 +72,8 @@ module.exports = function(app, db) {
           footerclass       : 'footer',
           login             : item.login,
           email             : item.email,
-          id                : item._id
+          id                : item._id,
+          readonly          : true
         });
       } 
     });  
