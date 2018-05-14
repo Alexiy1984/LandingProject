@@ -10,7 +10,7 @@
       <form action="/users/:login" method="post">
         <input type="text" placeholder="<%= login %>" readonly="<%= readonly %>" style="width: 15rem; height: 1.5rem" name="login"/><br><br>
         <input type="text" placeholder="<%= email %>" readonly="<%= readonly %>" style="width: 15rem; height: 1.5rem" name="email"/><br><br>
-        <input type="button" value="Edit" style="width: 15rem; height: 1.5rem" id="editbutton" onclick="<%= ReadonlySwitch()% >"/><br><br>
+        <input type="button" value="Edit" style="width: 15rem; height: 1.5rem" id="editbutton" onclick="<%= ReadonlySwitch() %>"/><br><br>
       </form>
     <%}%>
   </div>
